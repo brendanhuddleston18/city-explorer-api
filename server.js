@@ -22,7 +22,8 @@ app.get("/", (request, response) => {
   // chatGPT helped with this
   let userLat = request.query.latitude;
   let userLon = request.query.longitude;
-  console.log(typeof(userLat));
+  console.log(`Ammon lat: ${userLat})`);
+  console.log(`Ammon lon: ${userLon})`);
 
   if (userLat && userLon) {
     let userCity = weatherData.find(
