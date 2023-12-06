@@ -38,7 +38,7 @@ app.get("/", (request, response) => {
       response.json({ "CityName": userCity.city_name, "forecast": forecastArray });
     }
   } else {
-    console.log("didn't work bro");
+    response.status(404).json({ error: "City not found" });
   }
 });
 
