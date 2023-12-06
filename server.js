@@ -11,12 +11,24 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (request, response) => {
-  response.send("hello world"); 
+app.get('/weather', (request, response) => {
+  // chatGPT helped with this
+let userLat = request.query.latitude;
+let userLon = request.query.longitude;
+
+  
+  
+  if(userLat && userLat){
+    // 
+    // response.json(weatherData[cityData]);
+    response.send(`your longitude is ${userLon} and latitude is ${userLat}`);
+  }else {
+    console.log("didn't work bro");
+  }
 })
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+// app.get('/', (request, response) => {
+//   response.send("Hello World");
+// })
 
-app.get('/', (request, response) => {
-  response.send("Hello World");
-});
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
