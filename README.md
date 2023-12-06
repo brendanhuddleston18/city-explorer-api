@@ -26,6 +26,6 @@ Estimate of time needed to complete: 5hrs
 
 Start time: 3:55pm CST
 
-Finish time: _____
+Finish time: 11:55pm CST
 
-Actual time needed to complete: _____
+Actual time needed to complete: 8hrs
