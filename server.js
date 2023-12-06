@@ -22,16 +22,19 @@ app.get("/", (request, response) => {
   // chatGPT helped with this
   let userLat = request.query.latitude;
   let userLon = request.query.longitude;
+  console.log(`Ammon lat: ${userLat})`);
+  console.log(`Ammon lon: ${userLon})`);
 
   if (userLat && userLon) {
     let userCity = weatherData.find(
-      (city) => city.lon === userLon && city.lat === userLat
+      (city) => city.lon == userLon && city.lat == userLat
     );
     if (userCity) {
       console.log(userCity.data);
 
       const forecastArray = userCity.data.map((day) => {
         const date = day.valid_date;
+
         const description = day.weather.description;
         return new Forecast(date, description);
       });
