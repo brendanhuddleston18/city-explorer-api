@@ -1,8 +1,4 @@
-// 20231205154532
-// https://codefellows.github.io/code-301-guide/curriculum/class-07/lab/starter-code/data/weather.json
-
-[
-  {
+ [ {
     "data": [
       {
         "moonrise_ts": 1616530626,
