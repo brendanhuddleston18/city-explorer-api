@@ -85,40 +85,6 @@ app.get('/movies', async (request, response) => {
 
   }
 });
-//     let userCity = weatherData.find(
-//       (city) => city.lon == userLon && city.lat == userLat
-//     );
-//     if (userCity) {
-//       // console.log(userCity.data);
 
-//       const forecastArray = userCity.data.map((day) => {
-//         const date = day.valid_date;
 
-//         const description = day.weather.description;
-//         return new Forecast(date, description);
-//       });
-//       response.json({ CityName: userCity.city_name, forecast: forecastArray });
-//     }
-//   } else {
-//     response.status(404).json({ error: "City not found" });
-//   }
-// });
-
-// app.get("/", getWeatherFromSite);
-
-// async function getWeatherFromSite(request, response, latitude, longitude) {
-//   let weatherResponse = await axios.get(
-//     "http://api.weatherbit.io/v2.0/current",
-//     {
-//       params: {
-//         key: process.env.WEATHER_KEY,
-//         lang: "en",
-//         latitude: latitude,
-//         longitude: longitude,
-//       },
-//     }
-//   );
-
-//   console.log(weatherResponse);
-// }
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
