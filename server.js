@@ -25,12 +25,12 @@ function handleNotFound( request, response){
 
 
 /*-----------------Gets---------------------------------------------------------------- */
-app.get("/weather", getWeather);
-
-app.get("/movies", getMovies);
 
 app.get('/', handleHomePage);
 
+app.get("/weather", getWeather);
+
+app.get("/movies", getMovies);
 
 
 app.get('*', handleNotFound);
