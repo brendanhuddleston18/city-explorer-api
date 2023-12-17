@@ -5,10 +5,11 @@ const MOVIE_READ = process.env.MOVIE_READ_ACCESS;
 const MOVIE_API_KEY = process.env.MOVIE_API_KEY;
 
 class Movie {
-  constructor(name, description, voteAvg) {
+  constructor(name, description, voteAvg, img) {
     this.name = name;
     this.description = description;
     this.voteAvg = voteAvg;
+    this.img = img;
   }
 }
 
@@ -32,12 +33,14 @@ async function getMovies(request, response) {
       const movieArray = movieResponse.data.results.sort(
         (a, b) => b.vote_average - a.vote_average
       );
-      // console.log(movieArray);
+      console.log(movieArray);
       const sortedMovies = movieArray.map((value) => {
         const name = value.original_title;
         const description = value.overview;
         const voteAvg = value.vote_average;
-        return new Movie(name, description, voteAvg);
+        const img = value.poster_path;
+        console.log(img);
+        return new Movie(name, description, voteAvg, img);
       });
       movieCache[city] = {};
       movieCache[city] = sortedMovies;
